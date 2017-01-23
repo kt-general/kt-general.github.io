@@ -43,8 +43,6 @@
         <nav>
           <ul class="nav nav-pills pull-right">
             <li role="presentation" class="active"><a href="#">Home</a></li>
-            <li role="presentation"><a href="#">About</a></li>
-            <li role="presentation"><a href="#">Contact</a></li>
           </ul>
         </nav>
         <h3 class="text-muted">Microwaves at Georgia Tech</h3>
@@ -62,14 +60,14 @@
            var culc = {lat: 33.774953, lng: -84.396295};
            var love = {lat: 33.776727, lng: -84.401842};
            var klaus = {lat: 33.777191, lng: -84.396202};
-           var isye = {lat: 33.7752008, lng: -84.40185020000001};
+           var isye = {lat: 33.7752008, lng: -84.4018502};
            var bn = {lat: 33.77653850134482, lng: -84.38827822238466};
            var marc = {lat: 33.77755514039634, lng: -84.40134594470521};
            var ibb = {lat: 33.779010, lng: -84.397259};
-           var utc = {lat: 33.774106, lng: -84.398725};
-           var coc = {lat: 33.777523 , lng: -84.397389};
+           var coc = {lat: 33.777523, lng: -84.397389}
            var smith = {lat: 33.7736495, lng: -84.3951647};
-           var microwave_locations = [studentcenter, culc, love, klaus, isye, bn, marc,  ibb, utc, coc, smith];
+           var cherrem = {lat: 33.778240, lng: -84.397120};
+           var microwave_locations = [studentcenter, culc, love, klaus, isye, bn, marc, ibb, coc, smith, cherrem];
            var map = new google.maps.Map(document.getElementById('map'), {
              zoom: 15,
              center: gtech
@@ -77,10 +75,10 @@
            var scinfowin = '<div id="content">'+
               '<div id="siteNotice">'+
               '</div>'+
-              '<id="firstHeading" class="firstHeading"><font size="+2"><b>Student Center (4)</font></b>'+
+              '<id="firstHeading" class="firstHeading"><font size="+2"><b>Student Center (5)</font></b>'+
               '<div id="bodyContent">'+
               '<br/><b><font size = "-1">Second Floor (2) </b>: Two microwaves in the food court near the Dunkin&#39 Donuts' +
-              '<br/><b>First Floor (2) </b>: One microwave next to the Chick-fil-a; one microwave in the back of Burdell&#39s</font>'+
+              '<br/><b>First Floor (3) </b>: One microwave next to the Chick-fil-a; one microwave in the back of Burdell&#39s, one in Under the Couch (you will have to ask the worker on duty to use the microwave)</font>'+
               '</div>'+
               '</div>';
             var culcinfowin = '<div id="content">'+
@@ -112,7 +110,7 @@
               '</div>'+
               '<id="firstHeading" class="firstHeading"><font size="+2"><b>ISYE Main(2)</font></b>'+
               '<div id="bodyContent">'+
-              '<br/><font size="-1">In the lobby of the first floor by the doors</font>'+
+              '<br/><font size="-1">Side by side in the lobby of the first floor by the doors</font>'+
               '</div>'+
               '</div>';
             var bninfowin = '<div id="content">'+
@@ -139,14 +137,6 @@
               '<br/><font size="-1">Rear of the building by the vending machines</font>'+
               '</div>'+
               '</div>';
-            var utcinfowin = '<div id="content">'+
-              '<div id="siteNotice">'+
-              '</div>'+
-              '<id="firstHeading" class="firstHeading"><font size="+2"><b>Under the Couch</font></b>'+
-              '<div id="bodyContent">'+
-              '<br/><font size="-1">You will have to ask the worker on duty to use the microwave</font>'+
-              '</div>'+
-              '</div>';
             var cocinfowin = '<div id="content">'+
               '<div id="siteNotice">'+
               '</div>'+
@@ -160,10 +150,18 @@
               '</div>'+
               '<id="firstHeading" class="firstHeading"><font size="+2"><b>D.M. Smith</font></b>'+
               '<div id="bodyContent">'+
-              '<br/><font size="-1">basement lounge/kitchen near entrance from Freshman Hill</font>'+
+              '<br/><font size="-1">Basement lounge/kitchen near entrance from Freshman Hill</font>'+
               '</div>'+
               '</div>';
-            var loc_info = [scinfowin, culcinfowin, loveinfowin, klausinfowin, isyeinfowin, bninfowin, marcinfowin, ibbinfowin, utcinfowin, cocinfowin,smithinfowin];
+            var cherreminfowin = '<div id="content">'+
+              '<div id="siteNotice">'+
+              '</div>'+
+              '<id="firstHeading" class="firstHeading"><font size="+2"><b>Cherry Emerson Building</font></b>'+
+              '<div id="bodyContent">'+
+              '<br/><font size="-1">Confirmation Needed</font>'+
+              '</div>'+
+              '</div>';
+            var loc_info = [scinfowin, culcinfowin, loveinfowin, klausinfowin, isyeinfowin, bninfowin, marcinfowin, ibbinfowin, cocinfowin,smithinfowin, cherreminfowin];
 
             for (var i = 0; i < microwave_locations.length; i++) {
               var marker = new google.maps.Marker({
@@ -204,22 +202,21 @@
       <div class="row marketing">
         <div class="col-lg-6">
           <h4><b>Tell Us About Your Microwaves!</b></h4><br>
+            <form method="post" action="mailto:findmymicrowave@gmail.com" enctype="text/plain">
             Building
             <input type="text" name="Building"><br>
             <br>Room    
             <input type="text" name="Room">
-            </form>
             <br><br>Is the room buzzcard-access only?&nbsp
-            <input type="radio" name="Cooking Level" value="Restricted" />Yes &nbsp
-            <input type="radio" name="Cooking Level" value="Unrestricted" />No<br/><br>
-           <input type="submit"> 
+            <input type="radio" name="Cooking Level" value="Yes" />Yes &nbsp
+            <input type="radio" name="Cooking Level" value="No" />No<br/><br>
+           <input type="submit" name="submit" value="Submit"> 
            </div>
           <form>
 
 
+
       </div>
-
-
 
     <footer class="footer">
         <p>Tiffany Suwoto, Cy Heffley, Zach Justice, Katie Lau, Amanda Hui</p>
