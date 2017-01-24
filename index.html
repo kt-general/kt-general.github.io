@@ -67,10 +67,11 @@
            var coc = {lat: 33.777523, lng: -84.397389}
            var smith = {lat: 33.7736495, lng: -84.3951647};
            var mrdc = {lat: 33.776886, lng: -84.400604}
+           var groseclose = {lat: 33.77574963249416, lng:-84.4018703699112}
            var howey = {lat: 33.777464, lng: -84.398108}
            var vanleer = {lat: 33.77600045148052, lng: -84.3971335887909}
            var cherrem = {lat: 33.778240, lng: -84.397120};
-           var microwave_locations = [studentcenter, culc, love, klaus, isye, bn, marc, ibb, coc, smith,mrdc, howey,vanleer, cherrem];
+           var microwave_locations = [studentcenter, culc, love, klaus, isye, bn, marc, ibb, coc, smith,mrdc, groseclose, howey,vanleer, cherrem];
            var map = new google.maps.Map(document.getElementById('map'), {
              zoom: 15,
              center: gtech
@@ -127,7 +128,7 @@
             var marcinfowin = '<div id="content">'+
               '<div id="siteNotice">'+
               '</div>'+
-              '<id="firstHeading" class="firstHeading"><font size="+2"><b>Georgia Tech Manufacturing Institute</font></b>'+
+              '<id="firstHeading" class="firstHeading"><font size="+2"><b>Georgia Tech Manufacturing Institute (MARC)</font></b>'+
               '<div id="bodyContent">'+
               '<br/><font size="-1">Confirmation Needed</font>'+
               '</div>'+
@@ -143,7 +144,7 @@
             var cocinfowin = '<div id="content">'+
               '<div id="siteNotice">'+
               '</div>'+
-              '<id="firstHeading" class="firstHeading"><font size="+2"><b>College of Computing</font></b>'+
+              '<id="firstHeading" class="firstHeading"><font size="+2"><b>College of Computing (CoC)</font></b>'+
               '<div id="bodyContent">'+
               '<br/><b><font size = "-1">Third Floor:  </b> Turn right from the stairs, and follow to the kitchen/breakroom'+ 
               '<br/><b>Room 107A: </b> This room is for 1301/2316 helpdesk. If office hours are not in session, room may be locked.'+
@@ -163,6 +164,14 @@
               '<id="firstHeading" class="firstHeading"><font size="+2"><b>Manufacturing Related Disciplines Complex (MRDC)</font></b>'+
               '<div id="bodyContent">'+
               '<br/><font size = "-1">Confirmation Needed</font>'+
+              '</div>'+
+              '</div>';
+            var grosecloseinfowin = '<div id="content">'+
+              '<div id="siteNotice">'+
+              '</div>'+
+              '<id="firstHeading" class="firstHeading"><font size="+2"><b>Groseclose</font></b>'+
+              '<div id="bodyContent">'+
+              '<br/><b><font size = "-1">2nd floor Faculty Lounge: </b>You will have to ask the secretary in the main office accross the hall to be let in</font>'+
               '</div>'+
               '</div>';
             var howeyinfowin = '<div id="content">'+
@@ -189,7 +198,7 @@
               '<br/><b><font size="-1">Second floor: </b>Confirmation Needed</font>'+
               '</div>'+
               '</div>';
-            var loc_info = [scinfowin, culcinfowin, loveinfowin, klausinfowin, isyeinfowin, bninfowin, marcinfowin, ibbinfowin, cocinfowin,smithinfowin, mrdcinfowin,howeyinfowin,vanleerinfowin, cherreminfowin];
+            var loc_info = [scinfowin, culcinfowin, loveinfowin, klausinfowin, isyeinfowin, bninfowin, marcinfowin, ibbinfowin, cocinfowin,smithinfowin, mrdcinfowin, grosecloseinfowin, howeyinfowin,vanleerinfowin, cherreminfowin];
             for (var i = 0; i < microwave_locations.length; i++) {
               var marker = new google.maps.Marker({
                 position: microwave_locations[i],
