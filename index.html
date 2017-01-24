@@ -68,10 +68,11 @@
            var smith = {lat: 33.7736495, lng: -84.3951647};
            var mrdc = {lat: 33.776886, lng: -84.400604}
            var groseclose = {lat: 33.77574963249416, lng:-84.4018703699112}
-           var howey = {lat: 33.777464, lng: -84.398108}
+           var howey = {lat: 33.777464, lng: -84.398508}
+           var mosey = {lat: 33.77983510364928, lng: -84.39664274454117}
            var vanleer = {lat: 33.77600045148052, lng: -84.3971335887909}
            var cherrem = {lat: 33.778240, lng: -84.397120};
-           var microwave_locations = [studentcenter, culc, love, klaus, isye, bn, marc, ibb, coc, smith,mrdc, groseclose, howey,vanleer, cherrem];
+           var microwave_locations = [studentcenter, culc, love, klaus, isye, bn, marc, ibb, coc, smith,mrdc, groseclose, howey, mosey, vanleer, cherrem];
            var map = new google.maps.Map(document.getElementById('map'), {
              zoom: 15,
              center: gtech
@@ -179,8 +180,16 @@
               '</div>'+
               '<id="firstHeading" class="firstHeading"><font size="+2"><b>Howey (2)</font></b>'+
               '<div id="bodyContent">'+
-              '<br/><b><font size = "-1">Room S203:  </b>Lounge for Society of Physics students '+ 
+              '<br/><b><font size = "-1">Room S203:  </b>Lounge for Society of Physics students'+ 
               '<br/><b>Room S-105: </b>Locked, but can ask secretary in Administrative Office next door to be let in'+
+              '</div>'+
+              '</div>';
+            var moseyinfowin = '<div id="content">'+
+              '<div id="siteNotice">'+
+              '</div>'+
+              '<id="firstHeading" class="firstHeading"><font size="+2"><b>Molecular Science and Engineering Building</font></b>'+
+              '<div id="bodyContent">'+
+              '<br/><b><font size = "-1">TBD:  </b>Confirmation Needed'+
               '</div>'+
               '</div>';
             var vanleerinfowin = '<div id="content">'+
@@ -199,7 +208,7 @@
               '<br/><b><font size="-1">Second floor: </b>Confirmation Needed</font>'+
               '</div>'+
               '</div>';
-            var loc_info = [scinfowin, culcinfowin, loveinfowin, klausinfowin, isyeinfowin, bninfowin, marcinfowin, ibbinfowin, cocinfowin,smithinfowin, mrdcinfowin, grosecloseinfowin, howeyinfowin,vanleerinfowin, cherreminfowin];
+            var loc_info = [scinfowin, culcinfowin, loveinfowin, klausinfowin, isyeinfowin, bninfowin, marcinfowin, ibbinfowin, cocinfowin,smithinfowin, mrdcinfowin, grosecloseinfowin, howeyinfowin,moseyinfowin, vanleerinfowin, cherreminfowin];
             for (var i = 0; i < microwave_locations.length; i++) {
               var marker = new google.maps.Marker({
                 position: microwave_locations[i],
